@@ -26,6 +26,36 @@
 })();
 
 
+/**
+ * Hide navbar on scroll down and show on scroll up
+ */
+
+ (() => {
+
+  const navbar = document.querySelector('.js-navbar')
+  let currentPosition = 0
+
+  window.addEventListener('scroll', (event) => {
+      let top = window.scrollY
+
+      if (currentPosition < top && top > 16) {
+        navbar.classList.add('on-scroll-down')
+        navbar.classList.remove('on-scroll-up')
+      } else {
+        navbar.classList.remove('on-scroll-down')
+        navbar.classList.add('on-scroll-up')
+      }
+
+      currentPosition = top
+
+      if (currentPosition === 0) {
+        navbar.classList.remove('on-scroll-up', 'on-scroll-down')
+      }
+  })
+
+})();
+
+
 
 /**
  * Tabbed
@@ -151,35 +181,4 @@
   tabs[0].removeAttribute("tabindex");
   tabs[0].setAttribute("aria-selected", "true");
   panels[0].hidden = false;
-})();
-
-
-
-/**
- * Hide navbar on scroll down and show on scroll up
- */
-
-(() => {
-
-  const navbar = document.querySelector('.js-navbar')
-  let currentPosition = 0
-
-  window.addEventListener('scroll', (event) => {
-      let top = window.scrollY
-
-      if (currentPosition < top && top > 16) {
-        navbar.classList.add('on-scroll-down')
-        navbar.classList.remove('on-scroll-up')
-      } else {
-        navbar.classList.remove('on-scroll-down')
-        navbar.classList.add('on-scroll-up')
-      }
-
-      currentPosition = top
-
-      if (currentPosition === 0) {
-        navbar.classList.remove('on-scroll-up', 'on-scroll-down')
-      }
-  })
-
 })();

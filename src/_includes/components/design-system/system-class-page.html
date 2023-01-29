@@ -1,7 +1,7 @@
 {% assign classification = page.classification  %}
 {% assign items = site.data.design-system.[classification] %}
 
-<ul class="ob-grid ob-grid--auto">
+<ul class="cp-grid cp-grid--auto with-gutter">
   {% for item in items %}
     <li class="cp-card cp-card--bordered">
       <div class="cp-card__text">

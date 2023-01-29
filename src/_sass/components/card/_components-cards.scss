@@ -1,0 +1,32 @@
+// Block
+.cp-cards {
+  @include reset-list;
+}
+
+
+
+// Modifiers
+.cp-cards--alternate {
+  @include owl(--gutter-small);
+}
+
+
+
+// MQs
+@include respond(tablet-large) {
+
+  .cp-cards--alternate {
+
+    @include owl(--zero);
+
+    &.with-gap {
+      @include owl(--gutter-medium);
+    }
+
+    >*:nth-child(even) {
+      &> :last-child {
+        order: -1;
+      }
+    }
+  }
+}

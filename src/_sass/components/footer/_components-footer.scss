@@ -1,0 +1,35 @@
+.cp-footer {
+  padding-block-start: var(--gutter-medium);
+  padding-block-end: var(--gutter-medium);
+  background-color: var(--canvas-extra-lightest);
+}
+
+.cp-footer__apart {
+  @include dp-flex-wrap-gap(--gutter-medium);
+}
+
+
+.cp-footer-nav {
+  @include reset-list;
+}
+
+.cp-footer-nav__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: var(--spacing-extra-tiny);
+
+  &:hover {
+    color: var(--interactive-hovered);
+  }
+}
+
+
+
+// MQs
+@include respond(tablet-large) {
+  .cp-footer  {
+    padding-block-start: var(--gutter-extra-large);
+    padding-block-end: var(--gutter-extra-large);
+  }
+}

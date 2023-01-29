@@ -4,15 +4,15 @@ layout: default
 
 {% include components/navigation/navbar.html %}
 
-<div class="lo-sidebar">
+<div class="cp-sidebar">
 
   <main>
 
-    <article class="lo-journal">
+    <article class="cp-journal">
 
       <header>
-        <div class="lo-journal__contain lo-journal__contain--header">
-          <div class="lo-journal__contain-inner">
+        <div class="cp-journal__contain cp-journal__contain--header">
+          <div class="cp-journal__contain-inner">
             <h1>
               {{ page.title }}
             </h1>
@@ -23,23 +23,23 @@ layout: default
         </div>
       </header>
 
-      <div class="lo-journal__main">
+      <div class="cp-journal__main">
         <!-- here aside share buttons on absolute if you will -->
-        <div class="lo-journal__contain">
+        <div class="cp-journal__contain">
           {{ content }}
         </div>
       </div>
 
-      <footer class="lo-journal__footer">
-        <div class="lo-journal__contain">
-          Here's the footer
+      <footer class="cp-journal__footer">
+        <div class="cp-journal__contain">
+          {% include modules/copyright.html %}
         </div>
       </footer>
     </article>
     
   </main>
   
-  <div class="lo-sidebar__aside">
+  <div class="cp-sidebar__aside">
     {% include components/design-system/sidebar.html %}
   </div>
 </div>

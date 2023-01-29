@@ -1,0 +1,205 @@
+// Block
+.cp-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--rounded-medium);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
+
+  .cp-card__link {
+    &:hover {
+      color: var(--link-hovered-surface);
+      cursor: pointer;
+    }
+
+    &:focus {
+      color: var(--link-focused-surface);
+    }
+  }
+
+  // focus within to match the hover style
+  &:focus-within {
+    outline: 2px dotted var(--link-focused-surface);
+  }
+
+  // remove the unnecessary "basic focus style" only where :focus-within is supported.
+  &:focus-within .cp-card__link:focus {
+    outline: none;
+  }
+}
+
+
+// Elements
+.cp-card__text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-card__text {
+  @include owl(--spacing-small);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-small);
+  flex-grow: 1;
+}
+
+.cp-card__title {
+  font-size: var(--typescale-title-small);
+  font-weight: 300;
+  line-height: var(--leading-small);
+}
+
+.cp-card__description {
+  margin-block-end: var(--gutter-extra-small);
+}
+
+.cp-card__link {
+  color: inherit;
+  text-decoration: none;
+
+  &::after {
+    @include pseudo-class;
+    @include pos-abs-object-backward;
+    @include pos-zero-all-sides;
+  }
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.cp-card__media {
+  @include fit-media-into-container;
+  border-radius: var(--shape-rounded-medium);
+  min-height: 300px;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--canvas-dark);
+}
+
+.cp-card__img {
+  @include fit-media-into-container;
+  @include trans-and-scale;
+
+  &:hover {
+    @include scale-out-on-hover-and-focus;
+  }
+}
+
+.cp-card__brand {
+  width: 84px;
+}
+
+
+// Modifiers
+.cp-card--bordered {
+  padding: var(--spacing-medium);
+  border: 1px solid var(--outline-lightest);
+
+  .cp-card__text {
+    padding: 0;
+  }
+
+  &:hover {
+    border-color: var(--link-hovered-surface);
+    border-radius: var(--rounded-large);
+  }
+
+  &:focus-within {
+    outline: 2px solid transparent;
+    border-color: var(--link-hovered-surface);
+    border-radius: var(--rounded-large);
+  }
+}
+
+.cp-card--fill {
+  background-color: var(--canvas-extra-lightest);
+  border: 1px solid var(--outline-extra-lightest);
+  box-shadow: var(--elevation-neutral);
+  padding: var(--spacing-medium);
+
+  .cp-card__text {
+    padding: 0;
+  }
+
+  &:hover {
+    transform: scale3d(1.02, 1.02, 1.02);
+  }
+
+  &:focus-within {
+    transform: scale3d(1.02, 1.02, 1.02);
+    outline: 2px solid transparent;
+  }
+}
+
+.cp-card--stack {
+  .cp-card__text {
+    padding-block-start: 0;
+  }
+
+  .cp-card__media {
+    border-radius: var(--rounded-medium);
+    order: -1;
+  }
+}
+
+.cp-card--sides {
+  display: grid;
+  align-items: center;
+  border-radius: 0;
+
+  .cp-card__media {
+    @include pos-rel-object-forward;
+    cursor: zoom-in;
+  }
+}
+
+
+// States 
+.cp-card--bordered {
+  &.primary {
+    border-color: var(--primary-enabled);
+  }
+}
+
+
+// MQs
+@include respond(tablet-tiny) {}
+
+@include respond(tablet-large) {
+  .cp-card__text {
+    padding: var(--spacing-large);
+  }
+
+  .cp-card__title {
+    font-size: var(--typescale-title-medium);
+  }
+
+  .cp-card--sides {
+    grid-template-columns: 1fr 1fr;
+
+    .cp-card__text {
+      padding-inline-start: var(--gutter-large);
+      padding-inline-end: var(--gutter-large);
+    }
+  }
+}
+
+@include respond(laptop-medium) {
+  .cp-card__title {
+    font-size: var(--typescale-title-large);
+    line-height: var(--leading-medium);
+  }
+
+  .cp-card__text {
+    &.contain {
+      max-width: var(--contain-extra-tiny);
+    }
+  }
+
+  .cp-card--bordered,
+  .cp-card--fill {
+    padding: var(--spacing-large);
+  }
+}

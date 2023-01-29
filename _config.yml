@@ -1,35 +1,29 @@
 # Site settings
-title:  Barebook Design System
-description: "Barebook is an open-source, side project, design system with a strong focus on performance, scalability, maintainability, and a small footprint. Its architecture is based on ITCSS which is designed to aid the growth and maintainability of CSS projects. It also uses a composition of methodologies and principles such as BEM, SMACSS and OOCSS."
+title: Barebook Design System
+description: "A mini design system with a strong focus on performance, scalability, maintainability, and a small footprint."
 keywords:
 name: Barebook
-short_name: 
+short_name:
 image: /assets/images/site-image.jpg
 url: https://barebook.gm/
 type: website
 lang: "en-GB"
 
-
-
 author: A Camariana
 author_site: https://camariana.gm/
 author_github: https://github.com/camariana/
-
 
 # Global Configuration
 source: src
 timezone: Africa/Banjul
 
-
 # Build Command Options
-#baseurl: 
-
+#baseurl:
 
 # Serve Command OptionsPermalink
 #port: 40003
 livereload: true
 open_url: true
-
 
 # Plugins
 plugins:

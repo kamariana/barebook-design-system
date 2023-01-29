@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    A Camariana -- Design Engineer -- @camariana
+
+# THANKS
+    Harry Roberts -- Front-end Architect
+
+# TECHNOLOGY COLOPHON
+    CSS3, HTML5, JavaScript,
+    Jekyll, Barebook
