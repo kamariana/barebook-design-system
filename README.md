@@ -1,2 +1,4 @@
-# barebook-design-system
+# Barebook Design System
 A mini design system with a strong focus on performance, scalability, maintainability, and a small footprint.
+
+Barebook is an open-source, side project,  design system with a strong focus on performance, scalability, maintainability, and a small footprint. Its architecture is based on <a href="http://itcss.io/">ITCSS</a> which is designed to aid the growth and maintainability of CSS projects. It also uses a composition of methodologies and principles such as <a href="http://bem.info/">BEM</a>, <a href="https://smacss.com/">SMACSS</a> and   <a href="http://oocss.org/">OOCSS</a>.

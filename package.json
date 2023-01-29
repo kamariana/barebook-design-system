@@ -1,0 +1,21 @@
+{
+  "name": "barebook-design-system",
+  "version": "1.0.0",
+  "description": "A mini design system with a strong focus on performance, scalability, maintainability, and a small footprint.",
+  "main": "pages/index.html",
+  "scripts": {
+    "dev": "bundle exec jekyll serve --trace",
+    "dev-drafts": "bundle exec jekyll serve --drafts",
+    "build": "JEKYLL_ENV=production bundle exec jekyll build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camariana/barebook-design-system.git"
+  },
+  "author": "A Camariana <camariana40@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camariana/barebook-design-system/issues"
+  },
+  "homepage": "https://github.com/camariana/barebook-design-system#readme"
+}
