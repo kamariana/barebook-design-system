@@ -1,7 +1,7 @@
 // Block
 .cp-sidebar {
   display: grid;
-  gap: var(--gutter-large);
+  gap: var(--gutter-large);  
 }
 
 
@@ -20,10 +20,7 @@
     gap: 0;
   }
   
-  .cp-sidebar__aside {
-    position: sticky;
-    height: calc(100vh - var(--navbar-height));
-    top: var(--navbar-height);
+  .cp-sidebar__aside {    
     order: -1;
   }
 }

@@ -1,4 +1,5 @@
 {% assign classification = page.classification  %}
+{% assign type = page.type  %}
 
 
 <div class="cp-tabbed js-tabbed">
@@ -17,9 +18,11 @@
 
   <div class="cp-tabbed__content">
     {% assign itemsByType = site[classification] | group_by: "type"  %}
+    
+
     {% for type in itemsByType %}
       {% assign nameType =  type.name | downcase %}
-      {% assign pageType =  type.name | downcase %}
+      {% assign pageType =  page.type | downcase %}
 
       {% if nameType == pageType %}
       {% assign orderedItems = type.items | sort: 'order' %}
@@ -30,7 +33,6 @@
           {% assign description = firstItem.description %}
           {% assign url = firstItem.url %}
           {% assign content = firstItem.content %}
-
           
 
           <div class="cp-tabbed__panel js-tab-panel" id="demo">

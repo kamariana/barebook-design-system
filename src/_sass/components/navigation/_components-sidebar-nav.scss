@@ -16,3 +16,12 @@
   padding-block-start: var(--spacing-extra-small);
   padding-block-start: var(--spacing-extra-small);
 }
+
+
+// MQs
+@include respond(tablet-large) {
+  .cp-sidebar-nav {
+    position: sticky;
+    top: var(--navbar-height);
+  }
+}

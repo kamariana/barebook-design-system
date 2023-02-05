@@ -1,0 +1,24 @@
+---
+title: Datalist
+type: Forms
+description: "The datalist HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls."
+link: /elements/forms/#datalist
+
+order: 12
+---
+
+<div class="cp-form__group">
+  <label class="cp-form__label" for="region">Region:</label>
+  <span class="cp-form__hint notice">
+    Choose a Region from this list
+  </span>
+  <input class="cp-form__field" list="regions" id="region" name="region" />
+  <datalist class="cp-form__datalist" id="regions">
+    <option value="Region 1"></option>
+    <option value="Region 2"></option>
+    <option value="Region 3"></option>
+    <option value="Region 4"></option>
+    <option value="Region 5"></option>
+    <option value="Region 6"></option>
+  </datalist>
+</div>

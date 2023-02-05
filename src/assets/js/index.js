@@ -29,7 +29,6 @@
 /**
  * Hide navbar on scroll down and show on scroll up
  */
-
  (() => {
 
   const navbar = document.querySelector('.js-navbar')
@@ -54,7 +53,6 @@
   })
 
 })();
-
 
 
 /**
