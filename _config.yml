@@ -47,3 +47,6 @@ collections:
     output: true
   build-with:
     output: false
+
+# Links
+barebook_code: https://github.com/camariana/barebook
