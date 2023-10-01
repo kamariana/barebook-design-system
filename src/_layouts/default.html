@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-GB" }}">
+<html lang="{{ site.lang | default: 'en-GB' }}">
   <head>
     {% include modules/meta-data.html %}
-    <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
   </head>
   <body>
     <div class="ob-page">
@@ -10,9 +10,8 @@
       {{ content }}
       
     </div>
-
-    {% include components/navigation/fullscreen-nav.html %}
-    
+    {% include components/navigation/fullscreen-nav.html %}    
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
+    {% include modules/google-analytics.html %}
   </body>
 </html>

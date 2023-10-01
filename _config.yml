@@ -1,6 +1,6 @@
 # Site settings
 title: Barebook Design System
-description: "A mini design system with a strong focus on performance, scalability, maintainability, and a small footprint."
+description: "Barebook is an open mini design system with a strong focus on performance, scalability, and maintainability for faster websites and web applications."
 keywords:
 name: Barebook
 short_name:
@@ -9,9 +9,14 @@ url: https://barebook.gm/
 type: website
 lang: "en-GB"
 
-author: A Camariana
-author_site: https://camariana.gm/
-author_github: https://github.com/camariana/
+author: A Kamariana
+author_site: https://kamariana.gm/
+author_github: https://github.com/kamariana/
+author_linkedin: https://www.linkedin.com/in/kamariana/
+author_twitter: https://twitter.com/kamariana40
+author_email: a[at]kamariana.gm
+author_image: /assets/images/author-image.jpg
+author_image-alt: 
 
 # Global Configuration
 source: src
@@ -45,7 +50,7 @@ collections:
     output: true
   patterns:
     output: true
-  build-with:
+  webs:
     output: false
 
 # Links

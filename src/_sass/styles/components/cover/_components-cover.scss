@@ -1,0 +1,68 @@
+.cp-cover {
+  @include owl(--size-tiny);
+  position: relative;
+  padding-inline: var(--size-extra-small);
+  padding-block: var(--size-medium);
+  background-color: var(--interactive-extra-lightest);
+}
+
+// Elements
+.cp-cover__contain {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--size-medium);  
+  max-inline-size: var(--contain-extra-large);
+  margin-inline: auto;
+}
+
+.cp-cover__text {
+  @include pos-rel-object-forward;
+  @include owl(--size-tiny);
+  display: flex;
+  flex-direction: column;
+  max-inline-size: var(--contain-extra-small);
+}
+
+.cp-cover__media {
+  position: relative;
+  background-color: var(--canvas);
+
+  &::after {
+    @include pseudo-class;
+    @include pos-zero-all-sides;
+    position: absolute;
+    background-color: var(--transparent-neutral-medium);
+  }
+}
+
+.cp-cover__picture,
+.cp-cover__img {
+  @include fit-media-into-container;
+}
+
+
+// Modifiers 
+.cp-cover--overlay {
+  color: var(--white);
+
+  .cp-cover__media {
+    @include pos-zero-all-sides;
+    position: absolute;
+  }
+}
+
+
+
+// MQs
+@include respond(laptop-small) {
+  .cp-cover {
+    padding-block: var(--size-large);
+  }
+
+  .cp-cover__contain--sides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}

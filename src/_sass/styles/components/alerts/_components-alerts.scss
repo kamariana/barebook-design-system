@@ -1,0 +1,61 @@
+.cp-alert {
+  padding-block: var(--size-extra-small);
+  padding-inline: var(--size-tiny);
+  background-color: var(--canvas-light);
+  box-shadow: var(--elevation-medium);
+  border-inline-start: 8px solid var(--stroke-darker);
+  border-start-end-radius: var(--rounded-medium);
+  border-end-end-radius: var(--rounded-medium);
+  color: var(--black);
+  margin-block-start: var(--size-medium);
+}
+
+
+// Elements
+.cp-alert__caption {
+  font-weight: bold;
+}
+
+
+
+// Modifiers
+.cp-alert--info {
+  border-inline-color: var(--info);
+  background-color: var(--info-lightest);
+
+  .cp-alert__caption,
+  .cp-alert__title {
+    color: var(--info);    
+  }
+}
+
+.cp-alert--warning {
+  border-inline-color: var(--warning);
+  background-color: var(--warning-lightest);
+
+  .cp-alert__caption,
+  .cp-alert__title {
+    color: var(--warning);
+  }
+}
+
+
+
+// MQs
+@include respond(tablet-tiny) {
+  .cp-alert {
+    padding: var(--size-extra-small);
+  }
+}
+
+@include respond(tablet-small) {
+  .cp-alert {
+    padding: var(--size-small);
+  }
+}
+
+@include respond(laptop-small) {
+  .cp-alert {
+    padding: var(--size-medium);
+  }
+} 

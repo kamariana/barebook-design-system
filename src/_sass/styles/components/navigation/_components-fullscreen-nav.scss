@@ -1,0 +1,137 @@
+// Block
+.cp-fullscreen-nav {
+  @include pos-zero-all-sides;
+  position: fixed;
+  z-index: var(--layer-under);
+  background-color: var(--primary-enabled);
+  color: var(--white-light);
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+  transition: opacity 0.2s ease;
+
+  a {
+    color: var(--white-light);
+    &:hover {
+      color: var(--white);
+    }
+  }
+
+  svg {
+    fill: var(--white-light);
+    &:hover {
+      fill: var(--white);
+    }
+  }
+}
+
+
+.cp-fullscreen-menu {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+// Elements
+.cp-fullscreen-nav__contain {
+  display: flex;
+  block-size: 100vh;
+  flex-direction: column;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.cp-fullscreen-nav__head {
+  @include dp-flex-wrap-gap(--size-tiny);
+  @include dp-flex-center-apart;
+  padding: var(--size-tiny);  
+
+  .cp-logo {
+    border-color: var(--white);
+  }
+}
+
+.cp-fullscreen-nav__main {
+  margin-block: auto;
+  @include owl(--size-extra-small);
+}
+
+.cp-fullscreen-nav__foot {
+  @include dp-flex-wrap-gap(--size-tiny);
+  @include dp-flex-center-apart;
+  padding: var(--size-extra-small);  
+}
+
+
+.cp-fullscreen-menu__list {
+  @include reset-list;
+}
+
+.cp-fullscreen-menu__link {
+  display: block;
+  padding: var(--size-nano);
+  color: var(--white-light);
+  font-size: var(--typescale-medium);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+// Elements Modifiers
+.cp-fullscreen-menu__list--alt {
+  .cp-fullscreen-menu__link {
+    font-size: var(--typescale-small);
+    padding: var(--size-extra-nano);
+  }
+}
+
+
+// State
+#st-open-fullscreen-nav:target {
+  .cp-fullscreen-nav {
+    z-index: var(--layer-surface);
+    display: block;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+// MQs
+@include respond(tablet-medium) {
+  .cp-fullscreen-nav__head {
+    padding: var(--size-extra-small);
+  }
+
+  .cp-fullscreen-nav__main {
+    @include dp-flex-center;
+    gap: var(--size-medium);
+    display: flex;
+  }
+
+  .cp-fullscreen-menu {
+    text-align: start;
+  }
+}
+
+
+@include respond(laptop-small) {
+  .cp-fullscreen-nav__head {
+    padding: var(--size-small);
+  }
+
+  .cp-fullscreen-nav__main {
+    gap: var(--size-large);
+  }
+
+  .cp-fullscreen-menu__link {
+    font-size: var(--typescale-mega);
+  }
+
+  .cp-fullscreen-menu__list--alt {
+    .cp-fullscreen-menu__link {
+      font-size: var(--typescale-large);
+    }
+  }
+}

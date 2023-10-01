@@ -1,49 +1,56 @@
-<div
-  class="cp-fullscreen-nav js-fullscreen-nav"
-  role="navigation"
-  aria-label="Fullscreen Navigation"
-  hidden
->
-  <div class="cp-fullscreen-nav__contain">
-    <div class="cp-fullscreen-nav__header">
-      {% include components/logo.html %} {% include
-      components/toggle-nav-icon-close.html %}
-    </div>
+<div id="st-open-fullscreen-nav" class="cp-fullscreen-nav-wrapper">
+  <div
+    class="cp-fullscreen-nav"
+    role="navigation"
+    aria-label="Fullscreen Navigation"  
+  >
+    <div class="cp-fullscreen-nav__contain">
+      <div class="cp-fullscreen-nav__head">
+        {% include components/logo.html %} 
+        {% include components/toggle-nav-icon-close.html %}
+      </div>
 
-    <div class="cp-fullscreen-nav__main">
-      <nav class="cp-fullscreen-menu">
-        <ul class="cp-fullscreen-menu__list">
-          {% for item in site.data.navigation.primary %}
-          <li>
-            <a href="{{ item.url }}" class="cp-fullscreen-menu__link"
-              >{{ item.title }}</a
-            >
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>
-      <nav class="cp-fullscreen-menu">
-        <ul class="cp-fullscreen-menu__list cp-fullscreen-menu__list--alt">
-          {% for item in site.data.navigation.secondary %}
-          <li>
-            <a href="{{ item.url }}" class="cp-fullscreen-menu__link"
-              >{{ item.title }}</a
-            >
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>
-      <nav class="cp-fullscreen-menu">
-        <ul class="cp-fullscreen-menu__list cp-fullscreen-menu__list--alt">
-          {% for item in site.data.navigation.tertiary %}
-          <li>
-            <a href="{{ item.url }}" class="cp-fullscreen-menu__link"
-              >{{ item.title }}</a
-            >
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>
+      <div class="cp-fullscreen-nav__main">
+        <nav class="cp-fullscreen-menu">
+          <ul class="cp-fullscreen-menu__list">
+            {% for item in site.data.navigation.primary %}
+            <li>
+              <a href="{{ item.url }}" class="cp-fullscreen-menu__link"
+                >{{ item.title }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        <nav class="cp-fullscreen-menu">
+          <ul class="cp-fullscreen-menu__list cp-fullscreen-menu__list--alt">
+            {% for item in site.data.navigation.secondary %}
+            <li>
+              <a href="{{ item.url }}" class="cp-fullscreen-menu__link"
+                >{{ item.title }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        <nav class="cp-fullscreen-menu">
+          <ul class="cp-fullscreen-menu__list cp-fullscreen-menu__list--alt">
+            {% for item in site.data.navigation.tertiary %}
+            <li>
+              <a href="{{ item.url }}" class="cp-fullscreen-menu__link"
+                >{{ item.title }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+
+      <div class="cp-fullscreen-nav__foot">
+        {% include components/copyright.html %}
+        {% include components/built-with-barebook.html %} 
+        {% include components/socials.html %}
+      </div>
     </div>
   </div>
 </div>

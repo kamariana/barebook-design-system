@@ -1,0 +1,24 @@
+.cp-tag {
+  @include reset-list;
+  display: inline-flex;
+  font-size: var(--typescale-tiny);
+  order: -1;  
+  margin-block-end: var(--size-nano);
+  color: var(--surface-lighter);
+}
+
+
+// Elements
+.cp-tag__link {
+  text-decoration: none;
+  color: var(--surface-lighter);
+}
+
+
+// Modifiers
+.cp-tag--upcase {
+  text-transform: uppercase;
+  font-size: var(--typescale-extra-tiny);
+}
+
+

@@ -1,0 +1,29 @@
+<li class="cp-card cp-card--stack">
+  <div class="cp-card__text">
+    
+    <h3 class="cp-card__title">
+      <a class="cp-card__link" href="{{ item.liveUrl }}" target="_blank">
+        {{ item.title }}
+      </a>
+    </h3>
+
+    {% if item.description %}
+      <p class="cp-card__description">
+        {{ item.description }}
+      </p>
+    {% endif %}
+
+    {% include modules/categories.html %}
+
+
+    <a href="{{ item.liveUrl }}">
+      Visit Live
+    </a>
+    
+  </div> 
+  {% if item.image %}
+    <div class="cp-card__media">
+      <img class="cp-card__img" src="{{ item.image.path }}" alt="{{ item.image.alt }}" loading="lazy"/>
+    </div>
+  {% endif %}
+</li>

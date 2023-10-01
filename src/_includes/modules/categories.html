@@ -1,0 +1,12 @@
+<ul class="cp-tag cp-tag--upcase">
+  {% for category in item.categories %}
+    <li>
+      <a class="cp-tag__link" href="{{site.baseurl}}/categories/#{{category|slugize}}">
+        {{category}}
+      </a>
+    </li>
+    {% unless forloop.last %}
+      ,&nbsp;
+    {% endunless %}
+  {% endfor %}
+</ul>

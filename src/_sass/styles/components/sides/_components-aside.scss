@@ -1,0 +1,41 @@
+// Block
+.cp-aside {
+  display: grid;
+  gap: var(--size-medium);
+  grid-template-areas:
+    "aside-main"
+    "aside-sidebar";
+}
+
+
+
+// Elements
+  .cp-aside__main {
+    grid-area: aside-main;
+  }
+  
+  .cp-aside__sidebar {
+    grid-area: aside-sidebar;
+  }
+
+
+
+// Modifiers
+.cp-aside--gap-large {
+  gap: var(--size-large);
+}
+
+
+
+// MQs
+@include respond(tablet-large) {
+  .cp-aside {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include respond(laptop-medium) {
+  .cp-aside {
+    grid-template: 'aside-main aside-sidebar' / auto var(--contain-tiny);
+  }
+}

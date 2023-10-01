@@ -2,13 +2,15 @@
 layout: default
 ---
 
-{% include components/navigation/navbar.html %}
-
-{% include components/masthead.html %}
+{% include layouts/header.html %}
+{% include components/masthead/masthead.html %}
 
 <main>
   {{ content }}
 </main>
 
+{% comment %}
+  {% include components/promotion-consulting.html %}
+{% endcomment %}
 {% include layouts/footer.html %}
 

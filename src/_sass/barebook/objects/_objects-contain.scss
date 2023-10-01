@@ -1,0 +1,92 @@
+// Block
+.ob-contain {
+  padding-inline: var(--size-extra-small);
+  .ob-contain {
+    padding: 0;    
+  }
+}
+
+
+
+// Modifiers
+.ob-contain {
+  &--centered {
+    margin-inline: auto;
+  }
+
+  &--owl {
+    @include owl(--size-small)
+  }
+}
+
+
+
+// MQs
+@include respond(tablet-tiny) {
+  .ob-contain {
+    padding-inline: var(--size-medium);
+  }
+}
+
+@include respond(tablet-medium) {
+  .ob-contain {
+    &--responsive {
+      padding-inline: var(--size-mega);
+    }
+  }
+}
+
+@include respond(tablet-large) {
+  .ob-contain {
+    &--responsive {
+      padding-inline: var(--size-giga);
+    }
+  }
+}
+
+@include respond(laptop-small) {
+  .ob-contain {
+    padding-inline: var(--size-small);
+    
+    &--responsive {
+      padding-inline: var(--size-extra-small);
+    }
+
+    &--owl {
+      @include owl(--size-medium)
+    }
+
+    &--page { 
+      margin-inline: auto;
+      max-inline-size: var(--contain-mega);
+    } // 1440
+  
+    &--extra-small { 
+      max-inline-size: var(--contain-extra-small);
+    } // 600
+  
+    &--small { 
+      max-inline-size: var(--contain-small);
+    } // 768
+  
+    &--medium { 
+      max-inline-size: var(--contain-medium);
+    } // 900
+  
+    &--large { 
+      max-inline-size: var(--contain-large);
+    } // 1024
+  
+    &--extra-large {
+      max-inline-size: var(--contain-extra-large);
+    } // 1240
+  
+    &--extra-mega { 
+      max-inline-size: var(--contain-extra-mega);
+    }  // 1600
+    
+    &--giga { 
+      max-inline-size: var(--contain-giga);
+    }  // 1920
+  }
+}

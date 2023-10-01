@@ -1,0 +1,129 @@
+// Block
+.cp-masthead {
+  display: flex;
+  position: relative;
+  min-block-size: 100vh; 
+}
+
+// Elements
+.cp-masthead__contain {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0;
+}
+
+.cp-masthead__text {
+  @include pos-rel-object-forward;
+  display: flex;
+  flex-direction: column;
+  margin-block-start: auto;
+  padding-block: var(--size-large);
+  padding-inline: var(--size-extra-small);
+  justify-content: center;
+  max-inline-size: var(--contain-medium);
+}
+
+.cp-masthead__title {
+  font-size: var(--typescale-extra-giga);
+  line-height: var(--leading-extra-small);
+  margin-block-start: 0;
+}
+
+.cp-masthead__sub-title {
+  font-size: var(--typescale-medium);
+  font-weight: 200;
+}
+
+.cp-masthead__tag {
+  margin-block-end: var(--size-nano);
+  font-size: var(--typescale-extra-small);
+}
+
+.cp-masthead__button {
+  @include dp-flex-wrap-gap(--size-tiny);
+  align-items: center;
+  align-self: start;
+  margin-block-start: var(--size-small);
+}
+
+.cp-masthead__media {
+  position: relative;
+  background-color: var(--canvas);
+  &::after {
+    @include pseudo-class;
+    @include pos-zero-all-sides;
+    position: absolute;
+    background-color: var(--transparent-neutral-medium); 
+  }
+}
+
+.cp-masthead__figure {
+  padding: var(--size-extra-small);
+}
+
+.cp-masthead__picture,
+.cp-masthead__video,
+.cp-masthead__img {
+  @include fit-media-into-container;
+}
+
+
+
+// MQs
+@include respond(tablet-tiny) {
+  .cp-masthead {
+    &__text {
+      padding-inline: var(--size-large);
+    }
+  }
+}
+
+@include respond(tablet-large) {
+  .cp-masthead {
+    &__title {
+      font-size: var(--typescale-tera);
+      line-height: var(--leading-medium);
+    }
+  }  
+}
+
+@include respond(laptop-small) {
+  .cp-masthead {
+    &__text {
+      padding-block: var(--size-extra-large);
+  
+      &.align-block-start {
+        margin-block-end: auto;
+      }
+    
+      &.align-block-centered {
+        margin-block: auto;
+        padding-block: 0
+      }
+    
+      &.align-centered {
+        margin: auto;
+        text-align: center;
+      }
+    }
+
+    &__sub-title {
+      font-size: var(--typescale-extra-large);
+      line-height: var(--leading-medium);
+    }
+  }
+}
+
+@include respond(laptop-large) {
+  .cp-masthead {
+    &__text {
+      padding-block: var(--size-mega);
+    }
+
+    &__title {
+      font-size: var(--typescale-extra-tera);
+      line-height: var(--leading-extra-small);
+    }
+  }
+}

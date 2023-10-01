@@ -1,0 +1,36 @@
+// Block
+.cp-client-list {
+  @include reset-list;
+  @include dp-flex-wrap-gap(--size-extra-small);
+  @include dp-flex-center;
+  text-align: center;
+}
+
+
+// Elements
+.cp-client-list__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: var(--size-nano);
+}
+
+.cp-client-list__img {
+  background-color: var(--interactive-extra-lightest);
+  height: var(--size-large);
+  transition: 0.3s;
+}
+
+
+// Mqs
+@include respond(laptop-small) {
+  .cp-client-list__img {
+    width: auto;
+    height: var(--size-extra-large);
+  }
+
+  .cp-client-list {
+    gap: var(--size-small);
+  }
+}
+

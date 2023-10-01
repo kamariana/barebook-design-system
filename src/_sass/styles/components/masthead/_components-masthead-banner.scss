@@ -1,0 +1,20 @@
+// Modifiers
+.cp-masthead--banner {
+  min-block-size: auto;
+
+  .cp-masthead__text {
+    max-inline-size: var(--contain-medium);
+    padding-block-start: var(--size-giga);
+    padding-block-end: var(--size-small);
+  }
+}
+
+
+// Mqs
+@include respond(laptop-small) {
+  .cp-masthead--banner {
+    .cp-masthead__text {
+      padding-block-end: var(--size-medium);
+    }
+  }
+}

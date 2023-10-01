@@ -1,0 +1,38 @@
+// Modifiers
+.cp-masthead--banner {
+  min-block-size: auto;
+
+  .cp-masthead__text {
+    max-inline-size: var(--contain-tiny);
+  }
+}
+
+.cp-masthead--block-size-auto {
+  min-block-size: auto;
+}
+
+.cp-masthead--overlay {
+  color: var(--white);
+
+  .cp-masthead__title,
+  .cp-masthead__lead-text,
+  .cp-masthead__tag,
+  .cp-masthead__meta,
+  .cp-masthead__button {
+    color: var(--white);
+  }
+
+  .cp-masthead__media {
+    @include pos-zero-all-sides;
+    position: absolute;      
+  }
+}
+
+.cp-masthead--sides {  
+  .cp-masthead__media {
+    display: none;
+  }
+}
+
+
+

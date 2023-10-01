@@ -1,0 +1,177 @@
+// Block
+.cp-slat {}
+  
+
+
+// Elements
+.cp-slat__head {
+  @include dp-flex-wrap-gap(--size-tiny);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cp-slat__titlebar {
+  position: relative;
+}
+
+.cp-slat__toolbar {}
+
+.cp-slat__title {
+  margin: 0;
+  font-size: var(--typescale-extra-large);
+  line-height: var(--leading-tiny);
+}
+
+.cp-slat__sub-title {
+  margin-block-start: 0;
+  color: var(--surface-lighter);
+  max-width: var(--contain-extra-small)
+}
+
+.cp-slat__title,
+.cp-slat__sub-title {
+  &.surface-black {
+    color: var(--black);
+  }
+  
+  &.surface-white {
+    color: var(--white);
+  }
+}
+
+
+// Modifiers
+.cp-slat {
+  &--pad-tb {
+    padding-block: var(--size-medium);
+  }
+
+  &--fill-bg {
+    position: relative;
+    &::before {
+      @include pseudo-class;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 25%;
+      left: 0;
+      background-color: var(--primary-enabled);
+    }
+  }
+
+  &--highlight-primary {
+    background-color: var(--primary-enabled);
+  }
+
+  &--highlight-lighter {
+    background-color: var(--canvas-lighter);
+  }
+}
+
+.cp-slat__titlebar {
+  &--overline,
+  &--underline {
+    &::before,
+    &::after { 
+      @include pseudo-class;
+      position: absolute;
+      left: 0;
+      width: 64px;
+    }
+
+    &.centered {
+      &::before,
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &--overline {
+    padding-block-start: var(--size-tiny);
+  
+    &::before { 
+      top: 0;
+    }
+
+    &.dotted {
+      &::before { 
+        border-top: 2px dotted var(--stroke-primary);
+      }
+    }
+  
+    &.solid {
+      &::before { 
+        border-top: 2px solid var(--stroke-primary);
+      }
+    }
+  }
+
+  &--underline {
+    padding-block-end: var(--size-tiny);
+
+    &::after { 
+      bottom: 0;
+    }
+
+    &.dotted {
+      &::after { 
+        border-bottom: 2px dotted var(--stroke-primary);
+      }
+    }
+  
+    &.solid {
+      &::after { 
+        border-bottom: 2px solid var(--stroke-primary);
+      }
+    }
+  }
+}
+
+.cp-slat__head {
+  &--centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+
+
+// MQs
+@include respond(tablet-large) {
+  .cp-slat {
+    &--pad-tb {
+      padding-block: var(--size-large);
+    }
+
+    &--fill-bg {
+      &::before {
+        right: 40%;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+@include respond(laptop-small) {
+  .cp-slat__title {
+    font-size: var(--typescale-giga);
+  }
+
+  .cp-slat {
+    &--pad-tb {
+      padding-block: var(--size-extra-large);
+    }
+
+    &--fill-bg {
+      &::before {
+        right: 35%;
+      }
+    }
+    
+  }
+}

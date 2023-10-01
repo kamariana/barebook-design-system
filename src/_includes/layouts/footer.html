@@ -1,5 +1,57 @@
-<footer class="cp-footer">
-  <div class="ob-contain ob-contain--owl ob-contain-page large">
-    {% include modules/copyright.html %}
+<footer class="lo-footer lo-footer--pad-tb">
+  <div class="ob-contain ob-contain--page ob-contain--extra-mega">    
+    <div class="cp-grid cp-grid--columns-auto cp-grid--gap-size-large">
+      <div class="">
+        {% include components/logo.html %}
+        
+        <p>
+          Barebook is an open mini design system with a strong focus on performance, scalability, and maintainability for faster websites and web applications. 
+        </p>
+        
+      </div>
+
+      <div class="cp-grid cp-grid--flex cp-grid--with-gap">
+        <ul class="lo-footer-nav">
+          {% for item in site.data.navigation.primary %}
+          <li>
+            <a
+              href="{{ item.url }}/?ref=footer-links"
+              class="lo-footer-nav__link"
+              >{{ item.title }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+        <ul class="lo-footer-nav">
+          {% for item in site.data.navigation.secondary %}
+          <li>
+            <a
+              href="{{ item.url }}/?ref=footer-links"
+              class="lo-footer-nav__link"
+              >{{ item.title }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+        <ul class="lo-footer-nav">
+          {% for item in site.data.navigation.tertiary %}
+          <li>
+            <a
+              href="{{ item.url }}/?ref=footer-links"
+              class="lo-footer-nav__link"
+              >{{ item.title }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        {% include components/socials.html %}
+        {% include components/copyright.html %}
+      </div>
+      
+    </div>    
   </div>
+  
 </footer>

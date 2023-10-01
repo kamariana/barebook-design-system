@@ -1,0 +1,15 @@
+{% assign startYear = 2022 %}
+{% assign thisYear = site.time | date: '%Y' %}
+
+<p>
+  {{ site.short_name }} &copy;
+  
+  {% if startYear == thisYear %}
+   {{ startYear }} 
+  {% else %}
+  {{ startYear }} - {{ thisYear }}.
+  {% endif %}
+  
+  <br />
+  Crafted with beauty and excellence (al-ihsaan)
+</p>

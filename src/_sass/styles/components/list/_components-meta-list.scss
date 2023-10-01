@@ -1,0 +1,10 @@
+.cp-meta {
+  @include reset-list;
+  @include dp-flex-wrap-gap(--size-extra-tiny);
+  color: var(--surface-lighter);
+  margin-block-start: var(--size-extra-small);
+
+  .cp-meta {
+    margin-block-start: 0;
+  }
+}

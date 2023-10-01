@@ -1,0 +1,35 @@
+// Block
+.cp-button-group {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+// Elements
+.cp-button-group__item {}
+
+// Elements
+.cp-button-group__link {
+  @include box(--size-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0;
+}
+
+.cp-button-group__icon {
+  @include box(--size-extra-small);
+  fill: var(--surface-lighter);
+
+  &:hover {
+    fill: var(--link-hovered-surface);
+  }
+}
+
+
+// Modifiers
+.cp-button-group--gap {
+  gap: var(--size-small);
+}

@@ -4,50 +4,45 @@ layout: default
 
 {% include components/navigation/navbar.html %}
 
-<div class="cp-sidebar">
+<div class="lo-sidebar lo-sidebar--banner">
+  <main class="lo-sidebar__main">
+    <article class="lo-sidebar-journal">
 
-  <main>
-
-    <article class="cp-journal">
-
-      <header>
-        <div class="cp-journal__contain cp-journal__contain--header">
-          <div class="cp-journal__contain-inner">
-            <h1>
-              {{ page.title }}
-            </h1>
-            <p class="md-lead-text">
-              {{ page.description }}
-            </p>
-          </div>
-          {% include modules/design-system/toc-mobile.html %}
+      <header class="lo-sidebar-journal__header">
+        <div class="lo-sidebar-journal__contain">
+          
+          <h1 class="lo-sidebar-journal__title">
+            {{ page.title }}
+          </h1>
+          <p class="md-lead-text">
+            {{ page.description }}
+          </p>
+          
+          {% include /design-system/toc-mobile.html %}
         </div>
       </header>
 
-      <div class="cp-journal__main">
-        <!-- here aside share buttons on absolute if you will -->
-        <div class="cp-journal__contain with-toc">
-          <div class="cp-journal__content">
-            {{ content }}
-          </div>
-          <aside class="cp-journal__toc">
-            {% include modules/design-system/toc.html %}
-          </aside>
+      <div class="lo-sidebar-journal__content">
+        <div class="lo-sidebar-journal__contain">
+          {{ content }}
         </div>
       </div>
 
-      <footer class="cp-journal__footer">
-        <div class="cp-journal__contain">
-          {% include modules/copyright.html %}
-        </div>
+      <footer class="lo-sidebar-journal__footer">
+       <!-- navigation to move from one to the other collection -->
       </footer>
     </article>
-    
   </main>
-  
-  <div class="cp-sidebar__aside">
-    {% include components/design-system/sidebar.html %}
-  </div>
+
+  <aside class="lo-sidebar__aside lo-sidebar__aside--sidebar">
+    {% include /design-system/sidebar.html %}
+  </aside>
+
+  <aside class="lo-sidebar__aside lo-sidebar__aside--toc">
+    <div class="lo-sidebar__aside-sticky">
+      {% include /design-system/toc.html %}
+    </div>
+  </aside>
 </div>
 
 

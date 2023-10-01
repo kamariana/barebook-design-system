@@ -1,0 +1,25 @@
+html {
+  scrollbar-color: var(--interactive-extra-lighter) transparent;
+  scrollbar-width: thin;
+}
+
+/* width */
+::-webkit-scrollbar {
+  inline-size: var(--size-nano);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--interactive-extra-lighter);
+  border-radius: var(--rounded-medium);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--interactive-lighter);
+}

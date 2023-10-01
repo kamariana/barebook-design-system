@@ -1,0 +1,10 @@
+<ul class="cp-pills">
+{% assign expertise = page.expertise %}
+{% for expertise in expertise %}
+  <li>
+    <span class="cp-pill">
+      {{ expertise}}
+    </span>
+  </li>
+{% endfor %}
+</ul>

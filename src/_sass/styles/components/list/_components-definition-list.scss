@@ -1,0 +1,50 @@
+// Block
+.cp-def-list  {
+  @include reset-list;
+  @include dp-flex-wrap-gap(--size-nano);
+  flex-direction: column;
+}
+
+// ELements
+.cp-def-list__item {
+  display: list-item;
+}
+
+
+
+// Modifier
+.cp-def-list--inline  {
+  flex-direction: row;
+  gap: var(--size-tiny);
+  align-items: center;
+}
+
+.cp-def-list--inline-apart {
+  @include dp-flex-wrap-gap(--size-tiny);
+  @include dp-flex-center-apart;
+}
+
+.cp-def-list--with-gap  {
+  gap: var(--size-extra-small);
+}
+
+
+
+// Modifiers
+.cp-def-list  {
+    &--meta {
+      // dt {
+      //   color: var(--surface-lighter);
+      //   font-weight: normal;
+      //   font-size: var(--typescale-tiny);
+      // }
+
+      // dd {
+      //   font-weight: 500;
+      //   font-size: var(--typescale-extra-small);
+      // }
+    }
+}
+
+
+// MQs

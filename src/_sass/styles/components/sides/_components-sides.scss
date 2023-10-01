@@ -1,0 +1,60 @@
+// Block
+.cp-sides {
+  display: grid;
+  gap: var(--size-extra-small);
+}
+
+
+
+// Elements
+
+
+
+// Modifiers
+.cp-sides {
+  &.align-block-centered {
+    align-items: center;
+  }
+}
+
+
+
+// MQs
+@include respond(tablet-large) {
+  .cp-sides {
+    
+  }
+}
+
+
+@include respond(laptop-small) {
+  .cp-sides {
+    &--columns-half {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &--columns-third {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &--columns-fourth {
+      grid-template-columns: 1fr 1.5fr;
+    }
+
+    &--columns-third-reversed {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    &--columns-fourth-reversed {
+      grid-template-columns: 1.5fr 1fr;
+    }
+    
+    &--gap-large {
+      gap: var(--size-large);
+    }
+
+    &--gap-extra-large {
+      gap: var(--size-extra-large);
+    }
+  }
+}

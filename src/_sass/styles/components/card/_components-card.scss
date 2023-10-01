@@ -1,0 +1,220 @@
+// Block
+.cp-card  {  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--rounded-medium);
+  overflow: hidden;
+  transition: all 0.2s ease-in; 
+
+  // focus within to match the hover style
+  &:focus-within {
+    outline: 2px dotted var(--link-focused-surface);
+  }
+
+  // remove the unnecessary "basic focus style" only where :focus-within is supported.
+  &:focus-within .cp-card__link:focus {
+    outline: none;
+  }
+}
+
+
+// Elements
+.cp-card__text-contain {
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-card__text {  
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: var(--size-tiny);
+
+  > :last-child {
+    margin-block-start: auto;
+  }  
+}
+
+.cp-card__title {
+  font-family: var(--typeface-primary);
+  font-size: var(--typescale-mega);
+  font-weight: 200;
+  line-height: var(--leading-small);
+  margin-block-end: var(--size-extra-small);
+
+  + .cp-card__description {
+    margin-block-start: calc(var(--size-extra-tiny) * -1);
+  }
+}
+
+.cp-card__description {
+  margin-block-end: var(--size-extra-small);
+}
+
+.cp-card__link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 200;
+
+  &:hover {
+    color: var(--link-hovered-surface);
+    cursor: pointer;
+  }
+
+  &:focus {
+    color: var(--link-focused-surface);
+  }
+
+  &::after {
+    @include pseudo-class;
+    @include pos-abs-object-backward;
+    @include pos-zero-all-sides;
+  }
+}
+
+.cp-card__button {
+  align-self: start;
+}
+
+.cp-card__media {
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--interactive-extra-lightest);
+}
+
+.cp-card__img {
+  @include fit-media-into-container;
+  @include trans-and-scale;
+
+  &:hover {
+    @include scale-out-on-hover-and-focus;
+  }
+}
+
+
+
+// Modifiers
+.cp-card {
+  &--penalt-gap {
+    .cp-card__text {
+      > :nth-last-child(2) {
+        margin-block-end: var(--size-extra-small);
+      }
+    }
+  }
+
+  &--box {
+    padding: var(--size-tiny);
+
+    .cp-card__text {
+      padding: 0;
+    }
+
+    &.bordered {
+      border: 1px solid var(--stroke-darker);
+    }
+
+    &:hover {
+      border-color: var(--link-hovered-surface);
+      border-radius: var(--rounded-small);
+    }
+
+    &:focus-within {
+      outline: 2px solid transparent;
+      border-color: var(--link-hovered-surface);
+      border-radius: var(--rounded-small);
+    }
+  }
+
+  &--stack {
+    border: 1px dotted transparent;
+
+    .cp-card__media {
+      min-block-size: var(--size-extra-giga);
+      border-radius: var(--rounded-medium);
+      order: -1;
+    }
+
+    &:hover {
+      border-color: var(--link-hovered-surface);
+      border-radius: var(--rounded-small);
+    }
+
+    &:focus-within {
+      outline: 2px dotted transparent;
+      border-color: var(--link-hovered-surface);
+      border-radius: var(--rounded-small);
+    }
+  }
+
+  &--sides {
+    display: grid;
+    align-items: center;
+    border-radius: 0 !important;
+
+    .cp-card__text {
+      max-inline-size: var(--contain-small)
+    }
+  
+    .cp-card__media {
+      @include pos-rel-object-forward;
+      cursor: zoom-in;
+    }
+  }
+}
+
+.cp-card__text {
+  &--lc-block-start-none {
+    > :last-child {
+      margin-block-start: var(--size-extra-small);
+    } 
+  }
+}
+
+
+
+// MQs
+@include respond(tablet-tiny) {
+  .cp-card {    
+
+    &__text {
+      padding: var(--size-extra-small);
+    }
+
+    &--box {
+      padding: var(--size-extra-small);
+    }
+  }
+}
+
+@include respond(tablet-large) {
+  .cp-card {
+    &__text {
+      padding: var(--size-small);
+    }
+
+    &--box {
+      padding: var(--size-small);
+    }
+
+    &--sides {
+      grid-template-columns: 1fr 1fr;
+  
+      .cp-card__text {
+        padding-inline: var(--size-large);
+      }
+    }
+  }
+}
+
+@include respond(laptop-small) {
+  .cp-card {
+    border-radius: var(--rounded-large);
+
+    &__title {
+      font-size: var(--typescale-giga);
+    }
+  }
+}
+

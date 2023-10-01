@@ -1,0 +1,63 @@
+// Block
+.cp-grid {
+  @include reset-list;
+  display: grid;
+  gap: var(--size-extra-small);
+}
+
+
+// Modifers
+.cp-grid {
+  &--flex {
+    @include dp-flex-wrap-gap(--size-extra-small)
+  }
+
+  &--gap-large {
+    gap: var(--size-medium);
+  }
+
+  &--columns-auto { 
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+
+  &--columns-auto-fit { 
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+}
+
+
+// MQs
+@include respond(tablet-tiny) {}
+@include respond(tablet-medium) {}
+
+@include respond(tablet-large) {
+  .cp-grid {
+    gap: var(--size-small);
+
+    &--columns-auto {
+      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    }
+
+    &--columns-auto-fit { 
+      grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    }
+  }
+}
+
+@include respond(laptop-small) {
+  .cp-grid {
+    &--display-columns {
+      display: block;
+      column-gap: var(--size-extra-small);
+      columns: 26rem;
+  
+      > * {
+        break-inside: avoid;
+  
+        &:not(:last-child) {
+          margin-block-end: var(--size-extra-small);
+        }
+      }
+    }
+  }
+}

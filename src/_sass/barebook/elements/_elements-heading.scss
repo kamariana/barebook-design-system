@@ -1,0 +1,45 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--typeface-primary);
+  color: var(--surface-black);
+  margin-block-start: var(--size-medium);
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+
+  + * {
+    margin-block-start: var(--size-small);
+  }
+
+  + p {
+    margin-block-start: var(--size-extra-tiny);
+  }
+}
+
+
+h1 {
+  font-size: var(--typescale-mega);
+}
+
+h2 {
+  font-size: var(--typescale-extra-large);
+}
+
+h3 {
+  font-size: var(--typescale-extra-large);
+  font-weight: 200;
+}
+
+h4 {
+  font-size: var(--typescale-large);
+}
+
+h5,
+h6 {
+  font-size: var(--typescale-medium);
+}

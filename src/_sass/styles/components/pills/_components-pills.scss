@@ -1,0 +1,15 @@
+// Block
+.cp-pills {
+  @include reset-list;
+  @include dp-flex-wrap-gap(--size-tiny);
+  margin-block-start: var(--size-tiny)
+}
+
+
+.cp-pill {
+  display: inline-flex;
+  padding: var(--size-extra-nano) var(--size-tiny);
+  border: 1px solid var(--stroke-darker);
+  border-radius: var(--rounded-large);
+  font-size: var(--typescale-extra-small);
+}

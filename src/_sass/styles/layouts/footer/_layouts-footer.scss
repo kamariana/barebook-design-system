@@ -1,0 +1,67 @@
+// Block
+.lo-footer {
+  padding-block-start: var(--size-medium);
+  background-color: var(--canvas-lightest);
+}
+
+
+
+// Elements
+.lo-footer__apart {
+  @include dp-flex-wrap-gap(--gutter-medium);
+}
+
+.lo-footer-nav {
+  @include reset-list;
+}
+
+.lo-footer-nav__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: var(--size-extra-nano);
+
+  &:hover {
+    color: var(--interactive-hovered);
+  }
+}
+
+.lo-footer__sub {
+  margin-block-start: var(--size-medium);
+  padding: var(--size-extra-small);
+  background-color: var(--canvas-lighter);
+  font-size: var(--typescale-extra-small)
+}
+
+
+// Modifiers
+.lo-footer {
+  &--pad-tb {
+    padding-block: var(--size-medium);
+  }
+}
+
+
+
+// MQs
+@include respond(tablet-large) {
+  .lo-footer {
+    &--pad-tb {
+      padding-block: var(--size-large);
+    }
+  }
+}
+
+@include respond(laptop-small) {
+  .lo-footer {
+    padding-block-start: var(--size-extra-large);
+
+    &--pad-tb {
+      padding-block: var(--size-extra-large);
+    }
+  }
+
+  .lo-footer__sub {
+    margin-block-start: var(--size-extra-large);
+  }
+}

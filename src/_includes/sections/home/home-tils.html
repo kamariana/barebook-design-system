@@ -1,0 +1,40 @@
+{% assign recent_reversed_tils = site.tils | where: 'featured', 'true' | reverse %}
+
+
+<section class="cp-slat cp-slat--pad-tb">
+  <div class="
+    ob-contain 
+    ob-contain--page 
+    ob-contain--responsive
+    ob-contain--extra-mega
+    ob-contain--owl"
+  >
+
+    <div class="cp-slat__head">
+
+      <div class="cp-slat__titlebar cp-slat__titlebar--overline dotted">
+        <h2 class="cp-slat__title">
+          Tils
+        </h2>
+        <p class="cp-slat__sub-title">
+          Today I Learned - Featured entries on things I learn everyday
+        </p>
+      </div>
+
+    </div>
+
+    <ul class="cp-grid cp-grid--columns-auto">
+      {% for item in recent_reversed_tils limit: 3 %}
+        {% include components/cards/card-til.html %}
+      {% endfor %}
+    </ul>
+
+
+    <div class="md-dp-center-block">
+      <a href="/tils/?ref=cta-home-tils" class="cp-button cp-button--secondary">
+        See All Tils
+      </a>
+    </div>
+    
+  </div>
+</section>

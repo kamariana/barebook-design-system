@@ -1,0 +1,34 @@
+// Block
+.cp-primary-nav {
+  display: none;
+}
+
+
+// Elements
+.cp-primary-nav__list {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+}
+
+.cp-primary-nav__link {
+  display: block;
+  padding: var(--size-extra-tiny) var(--size-tiny);
+  color: inherit;
+  font-size: var(--typescale-medium);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-hovered);
+  }
+}
+
+.cp-primary-nav__link--button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    fill: var(--primary-hovered);
+  }
+}
