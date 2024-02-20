@@ -24,7 +24,7 @@
   padding-inline: var(--size-extra-small);
   border-left: 3px solid transparent;
   font-size: var(--typescale-body-default);
-  color: var(--black-light);
+  color: inherit;
 
   &:hover {
     color: var(--link-hovered-surface);

@@ -5,8 +5,8 @@
   --black: var(--ref-black);
   --black-light: var(--ref-neutral-80);
 
-  --selection-canvas: var(--ref-primary-70);
-  --selection-surface: var(--ref-black);
+  --selection-canvas: var(--ref-primary-60);
+  --selection-surface: var(--ref-neutral-5);
 }
 
 
@@ -56,9 +56,9 @@
   --primary-hovered-surface: var(--ref-white);
   --primary-focused-surface: var(--ref-white);
 
-  --secondary-enabled: var(--ref-secondary-60);
-  --secondary-hovered: var(--ref-secondary-70);
-  --secondary-focused: var(--ref-secondary-80);
+  --secondary-enabled: var(--ref-primary-60);
+  --secondary-hovered: var(--ref-primary-70);
+  --secondary-focused: var(--ref-primary-80);
   --secondary-enabled-surface: var(--ref-black);
   --secondary-hovered-surface: var(--ref-white);
   --secondary-focused-surface: var(--ref-white);
@@ -110,9 +110,9 @@
   --primary-hovered-surface: var(--ref-white);
   --primary-focused-surface: var(--ref-white);
 
-  --secondary-enabled: var(--ref-secondary-60);
-  --secondary-hovered: var(--ref-secondary-70);
-  --secondary-focused: var(--ref-secondary-80);
+  --secondary-enabled: var(--ref-primary-60);
+  --secondary-hovered: var(--ref-primary-70);
+  --secondary-focused: var(--ref-primary-80);
   --secondary-enabled-surface: var(--ref-white);
   --secondary-hovered-surface: var(--ref-white);
   --secondary-focused-surface: var(--ref-white);
@@ -134,7 +134,7 @@
   --stroke-primary: var(--primary-enabled);
 
   // Misc
-  accent-color: var(--ref-primary-50);
+  accent-color: var(--ref-primary-90);
 }
 
 

@@ -14,6 +14,11 @@
   z-index: var(--layer-back);
 }
 
+@mixin pos-abs-object-forward {
+  position: absolute;
+  z-index: var(--layer-forward);
+}
+
 @mixin pos-zero-all-sides {
   top: 0;
   right: 0;

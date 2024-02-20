@@ -1,20 +1,32 @@
 // Block
 .ob-avatar {
-  background-color: var(--white);
+  background-color: var(--interactive-extra-lightest);
 }
 
 // Modifiers 
-.ob-avatar--circle {
-  border-radius: var(--rounded-full);
-}
-
-.ob-avatar--rounded {
-  border-radius: var(--rounded-medium);
-}
-
-
-// States
 .ob-avatar {
+  &--circle {
+    border-radius: var(--rounded-full);
+  }
+
+  &--rounded {
+    border-radius: var(--rounded-medium);
+  }
+
+
+  // Sizes
+  &--extra-nano {
+    @include box(--size-small);
+  }
+
+  &--nano {
+    @include box(--size-medium);
+  }
+
+  &--extra-small {
+    @include box(--size-large);
+  }
+
   &--small {
     @include box(--size-mega);
   }
@@ -29,5 +41,11 @@
 
   &--extra-large {
     @include box(--size-extra-giga);
+  }
+
+  &--default {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

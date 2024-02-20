@@ -52,6 +52,8 @@ collections:
     output: true
   webs:
     output: false
+  templates:
+    output: false
 
 # Links
 barebook_code: https://github.com/camariana/barebook

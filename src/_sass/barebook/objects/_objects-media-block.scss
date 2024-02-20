@@ -1,13 +1,13 @@
 // Block
 .ob-media {
-  @include dp-flex-wrap-gap(--size-small);
+  @include dp-flex-wrap-gap(--size-tiny);
   align-items: center;
 }
 
 
 // Elements
 .ob-media__body {
-  @include owl(--size-tiny);
+  @include owl(--size-small);
   flex: 1;
 }
 
@@ -20,36 +20,57 @@
   line-height: var(--leading-small);
 }
 
+.ob-media__link {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
 
 // Modifiers
-.ob-media--stack {
-  flex-direction: column;
-  gap: var(--size-small);
-}
-
-.ob-media--responsive {
-  flex-direction: column;
-  align-items: start;
-  gap: var(--size-small);
-}
-
-
-// States 
 .ob-media {
-  &.large {
-    gap: var(--size-medium);
+  &--stack {
+    flex-direction: column;
+    gap: var(--size-extra-small);
   }
 
-  &.align-block-start {
+  &--responsive {
+    flex-direction: column;
+    align-items: start;
+    gap: var(--size-extra-small);
+  }
+
+  &--medium {
+    gap: var(--size-extra-small);
+  }
+
+  &--large {
+    gap: var(--size-small);
+  }
+
+  &--align-block-start {
     align-items: start;
   }
 }
 
+.ob-media__body {
+  &--data {
+    @include owl(--size-extra-nano);
+
+    > * {
+      display: block;
+    } 
+  }
+}
 
 
 // MQs
 @include respond(tablet-tiny) {
-  .ob-media--responsive {
-    flex-direction: row;
+  .ob-media {
+    &--responsive {
+      flex-direction: row;
+    }
   }
 }

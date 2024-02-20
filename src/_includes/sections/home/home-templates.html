@@ -1,4 +1,4 @@
-{% assign featured_reversed_webs = site.webs %}
+{% assign featured_reversed_templates = site.templates %}
 
 <section class="cp-slat cp-slat--pad-tb">
     <div class="
@@ -12,17 +12,17 @@
 
       <div class="cp-slat__titlebar cp-slat__titlebar--overline dotted">
         <h2 class="cp-slat__title">
-          Website & Web Application
+          Free themes and templates
         </h2>
         <p class="cp-slat__sub-title">
-          A list of websites & web Application built on top of Barebook!
+          A list of free themes & templates built on top of Barebook!
         </p>
       </div>
 
     </div>
    
     <ul class="cp-grid cp-grid--columns-auto">
-      {% for item in featured_reversed_webs limit: 10  %}
+      {% for item in featured_reversed_templates limit: 10  %}
         {% include components/cards/card-journal.html %}
       {% endfor %}
     </ul>    
